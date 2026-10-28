@@ -16,6 +16,9 @@ workflows:
       - name: Add Android Platform
         script: |
           npx cap add android
+      - name: Inject Camera Permissions
+        script: |
+          sed -i '' 's|<application|<uses-permission android:name="android.permission.CAMERA" />\n    <application|g' android/app/src/main/AndroidManifest.xml
       - name: Capacitor Sync
         script: |
           npx cap sync
