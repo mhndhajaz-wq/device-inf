@@ -11,7 +11,7 @@ interface DeviceData {
   dateSaved: string;
 }
 
-export default function ScannerPlayground() {
+export function ScannerPlayground() {
   const [loading, setLoading] = useState<boolean>(false);
   const [statusText, setStatusText] = useState<string>('');
   const [scannedDevices, setScannedDevices] = useState<DeviceData[]>(() => {
